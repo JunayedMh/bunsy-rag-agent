@@ -14,15 +14,15 @@ from ragkit import RAG
 from ragkit.exceptions import GenerationError
 
 st.set_page_config(page_title="Bunsy Doc Q&A", page_icon="📄")
-st.title("📄 Ask the Bunsy Bloggers Brief")
+st.title("📄 Ask the Bunsy")
 st.caption("Answers are grounded strictly in the uploaded document, with page citations.")
 
 
 @st.cache_resource
 def load_rag():
     return RAG(
-        document="Bunsy Bloggers Brief.pdf",
-        model="openrouter/free",
+        document="Bunsy Product Reference.pdf",
+        model="poolside/laguna-s-2.1:free",
         base_url="https://openrouter.ai/api/v1",
     )
 
@@ -30,7 +30,7 @@ rag = load_rag()
 
 question = st.text_input(
     "Ask a question about the document:",
-    placeholder="e.g. What is the approval process?",
+    placeholder="e.g. What are the models?",
 )
 
 if question:
