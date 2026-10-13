@@ -24,6 +24,7 @@ def load_rag():
         document="Bunsy Product Reference.pdf",
         model="poolside/laguna-s-2.1:free",
         base_url="https://openrouter.ai/api/v1",
+        persist_directory="./rag_index",
     )
 
 rag = load_rag()

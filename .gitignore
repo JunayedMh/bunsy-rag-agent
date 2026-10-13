@@ -2,3 +2,4 @@
 __pycache__/
 *.pyc
 .ragkit_data/
+rag_index/
